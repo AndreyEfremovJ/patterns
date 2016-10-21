@@ -1,0 +1,8 @@
+Servers
+.metadata
+RemoteSystemsTempFiles
+*.log
+*.mdmp
+Folder
+.recommenders
+/.classpath
