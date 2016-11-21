@@ -4,17 +4,22 @@ public class AppDecorator {
 	public static void main(String [] arg){
 		
 		IChat chat = new Message("Maxim", "Alexander", "Hi, how do you do!!!"); 
-		chat.sendMesssage();
+		
+		Decorator dec = new EncryptionDecorator(chat,
+				"Encryption", "Unencryption");
+		dec.sendMesssage();
+		dec.getMessage();
 		
 		System.out.println("--------------------------------------------------------------");
 		
-		IChat chat1 = new HideDecorator(new Message("Maxim", "Alexander", "Hi, how do you do!!!"));
-		chat1.sendMesssage();
+		Decorator dec2 = new HideDecorator(chat, "Hide");
+		dec2.sendMesssage();
+		dec2.getMessage();
 		
 		System.out.println("--------------------------------------------------------------");
 		
-		IChat chat2 = new EncryptionDecorator(new Message("Maxim", "Alexander", "Hi, how do you do!!!"));
-		chat2.sendMesssage();
-
+		Decorator dec3 = new EncryptionDecorator(new HideDecorator(chat, "Hide"), "Encryption", "Unencryption");
+		dec3.sendMesssage();
+		dec3.getMessage();
 	}
 }
