@@ -5,11 +5,11 @@ public class BancomatMain {
 	int [] ruBanknote = {5000, 1000, 500, 100, 50};
 	int [] usBanknote = {100, 50, 20, 5};
 		
-	 Delivery dev1 = new Delivery1();
-	 Delivery dev2 = new Delivery1();
-	 Delivery dev3 = new Delivery1();
-	 Delivery dev4 = new Delivery1();
-	 Delivery dev5 = new Delivery1();
+	 Delivery dev1 = new SpecificDelivery();
+	 Delivery dev2 = new SpecificDelivery();
+	 Delivery dev3 = new SpecificDelivery();
+	 Delivery dev4 = new SpecificDelivery();
+	 Delivery dev5 = new SpecificDelivery();
 	 dev1.setNextDelivery(dev2);
 	 dev2.setNextDelivery(dev3);
 	 dev3.setNextDelivery(dev4);
@@ -59,7 +59,7 @@ class Money{
 }
 
 
-class Delivery1 extends Delivery{
+class SpecificDelivery extends Delivery{
 	
 	void delivery(Money money, int step) {
 		int count = money.getSum()/money.getBanknote()[step];
