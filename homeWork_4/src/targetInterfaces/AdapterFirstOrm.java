@@ -2,12 +2,10 @@ package targetInterfaces;
 
 import firstOrmLibrary.IFirstOrm;
 import models.intefaces.IDbEntity;
-import secondOrmLibrary.ISecondOrm;
 
-public class AdapterOrm implements ITarget{
+public abstract class AdapterFirstOrm implements ITarget{
 	
 	IFirstOrm<IDbEntity> firstOrm;
-	ISecondOrm secondOrm;
 	IDbEntity entity;
 	
 	public void CreateFirstOrm() {
@@ -25,9 +23,4 @@ public class AdapterOrm implements ITarget{
 	public void DeleteFirstOrm() {
 		firstOrm.Delete(entity);
 	}
-	
-	public  ISecondOrm getContextSecondOrm() {
-		return (ISecondOrm) secondOrm.getContext();
-	}
-
 }

@@ -1,7 +1,5 @@
 package targetInterfaces;
 
-import secondOrmLibrary.ISecondOrm;
-
 public interface ITarget {
 	
     void CreateFirstOrm();
@@ -9,6 +7,6 @@ public interface ITarget {
     void UpdateFirstOrm();
     void DeleteFirstOrm();
     
-    ISecondOrm getContextSecondOrm();
+    ITarget getContext();
 	
 }

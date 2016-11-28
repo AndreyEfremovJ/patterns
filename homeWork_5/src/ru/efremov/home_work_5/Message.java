@@ -11,8 +11,11 @@ public class Message implements IChat{
 		this.recipient = recipient;
 		this.text = text;
 	}
-	public Message getMessage() {
-		return this;
+
+	public void getMessage() {
+		System.out.println(autor);
+		System.out.println(recipient);
+		System.out.println(text);
 	}
 
 	public void sendMesssage() {
@@ -44,5 +47,9 @@ public class Message implements IChat{
 	public void setText(String text) {
 		this.text = text;
 	}
-
+	
+	@Override
+	public String toString(){
+		return autor + "\n" + recipient + "\n" + text;
+	}
 }
